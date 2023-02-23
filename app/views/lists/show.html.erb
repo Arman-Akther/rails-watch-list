@@ -1,3 +1,15 @@
-<h1><%= @list.name %> List </h1>
+<h1><%= @list.name %></h1>
+
+<% if @bookmarks.any? %>
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+      <li><%= bookmark.movie[:title] %></li>
+      <li><%= bookmark.comment %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No bookmarks found.</p>
+<% end %>
+
 <%= link_to("Back", lists_path) %>
-<%= link_to("add movie", new_bookmark_path) %>
+<%= link_to("add movie", new_list_bookmark_path(@list)) %>
