@@ -1,12 +1,24 @@
-<h1> 📽 Your Movie Wishlist 📽</h1>
-<h3>My list</h3>
-  <p>
-    <ul class="card-container">
-      <% @lists.each do |x| %>
-      <li class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-steam-wave-international-film-festival-banner-poster-image_195212.jpg)">
-        <%= link_to x.name, list_path(x) %>
-      </li>
-      <% end %>
-    </ul>
-  <%= link_to "Create a new list", new_list_path, class: "btn btn-success" %>
-  </p>
+<div class="card-trip">
+  <img src="https://www.themoviebuff.net/wp-content/uploads/2018/07/Cinema_Banner.jpeg" alt="card trip movie image">
+  <div class="card-trip-infos">
+    <div>
+      <h1> 📽 Your Movie Wishlist 📽</h1>
+      <h2>Select a list below</h2>
+    </div>
+    <img src="https://w0.peakpx.com/wallpaper/684/194/HD-wallpaper-awesome-colorful-music-black-nice-cool-awesome-pieces-white-album.jpg" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<p>
+  <ul class="card-container">
+    <% @lists.each do |x| %>
+    <li class="card-movie card-movie:before card-movie:hover:before" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-steam-wave-international-film-festival-banner-poster-image_195212.jpg)">
+      <%= link_to x.name, list_path(x) %>
+    </li>
+    <% end %>
+  </ul>
+
+  <div class="list-button">
+    <%= link_to "Create a new list", new_list_path, class: "btn btn-flat" %>
+  </div>
+</p>

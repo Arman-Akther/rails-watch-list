@@ -39,30 +39,69 @@
   }
 }
 
-
-.card-movie {
-  background-size: cover;
-  background-position: center;
-  height: 80px;
-  width: auto;
-
-  display: flex;
-  display: wrap;
-
-  justify-content: center;
-  align-items: center;
-  color: black;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-  text-decoration: none;
-  margin: 10px;
-}
-
 .card-movie a {
   text-decoration: none;
   color: antiquewhite;
 }
+
+.card-movie {
+  position: relative;
+  height: 100px;
+  width: auto;
+
+  display: flex;
+  display: wrap;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  margin: 10px;
+  overflow: hidden; /* Prevents the pseudo-element from overflowing the card */
+}
+
+.card-movie:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-steam-wave-international-film-festival-banner-poster-image_195212.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-movie:hover:before {
+  opacity: 0.1;
+  cursor: pointer;
+}
+
+
+// .card-movie {
+//   background-size: cover;
+//   background-position: center;
+//   height: 80px;
+//   width: auto;
+
+//   display: flex;
+//   display: wrap;
+
+//   justify-content: center;
+//   align-items: center;
+//   color: black;
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+//   text-decoration: none;
+//   margin: 10px;
+// }
